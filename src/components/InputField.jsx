@@ -2,7 +2,7 @@ import {nanoid} from 'nanoid'
 import React, {useState, useRef} from 'react'
 
 
-export default function InputField({values, setValues}){
+export default function InputField({setValues}){
 
     const inputRef = useRef(null)
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import InputField from './components/InputField'
+import FieldBox from './components/FieldBox'
 import './App.css'
 
 function App() {
@@ -9,8 +9,7 @@ function App() {
   return (
     <div>
       <h1>Placeholder</h1>
-      <InputField 
-        values={values}
+      <FieldBox 
         setValues={setValues}
       />
     </div>
