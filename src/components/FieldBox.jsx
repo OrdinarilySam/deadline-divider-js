@@ -1,23 +1,32 @@
 import React, { useState } from 'react'
 import InputField from './InputField'
+import {nanoid} from 'nanoid'
 
 export default function FieldBox({setValues}) {
 
-    const [fields, setFields] = useState([
-        <InputField setValues={setValues} key={0} />
-    ])
+    const [fields, setFields] = useState([nanoid()])
 
+    function handleDelete(key){
+        setFields(prevFields => prevFields.filter((id) => id !== key))
+    }
 
     function handleClick(){
         setFields(prevFields => [
             ...prevFields, 
-            <InputField setValues={setValues} key={prevFields.length} />
+            nanoid()
         ])
     }
 
     return (
         <div>
-            {fields}
+            {fields.map((id) => (
+                <InputField
+                    key={id}
+                    setValues={setValues}
+                    onDelete={handleDelete}
+                    parentId={id}
+                />
+            ))}
             <button onClick={handleClick}>Add Another</button>
         </div>
     )

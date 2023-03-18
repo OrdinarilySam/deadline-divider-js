@@ -2,16 +2,15 @@ import {nanoid} from 'nanoid'
 import React, {useState, useRef} from 'react'
 
 
-export default function InputField({setValues}){
+export default function InputField({setValues, onDelete, parentId }){
 
     const inputRef = useRef(null)
 
     const [formInfo, setFormInfo] = useState(() => {
-        const btnId = nanoid()
-        const inputId = nanoid()
+        const childId = nanoid()
         return {
-            btnId: btnId,
-            inputId: inputId,
+            parentId: parentId,
+            childId: childId,
             set: false,
             inputValue: ""
         }
@@ -28,6 +27,9 @@ export default function InputField({setValues}){
         })
     }, [])
 
+
+
+
     function handleChange(event){
         setFormInfo(prevFormInfo => {
             return {
@@ -38,7 +40,7 @@ export default function InputField({setValues}){
         setValues(prevValues => {
             return {
                 ...prevValues,
-                [formInfo.inputId]: event.target.value
+                [formInfo.childId]: event.target.value
             }
         })
     }
@@ -58,6 +60,11 @@ export default function InputField({setValues}){
         inputRef.current.blur()
     }
 
+    function handleDelete(){
+        onDelete(formInfo.parentId)
+    }
+
+
 
     return (
         <form 
@@ -69,7 +76,6 @@ export default function InputField({setValues}){
                 
                 <p
                     style={{display: 'inline'}}
-                    id={formInfo.inputId}
                     onClick={handleFocus}
                 >
                 {formInfo.inputValue}
@@ -78,7 +84,6 @@ export default function InputField({setValues}){
                 <input 
                     type="text" 
                     value={formInfo.inputValue} 
-                    id={formInfo.inputId} 
                     onChange={handleChange}
                     onBlur={handleBlur}
                     ref={inputRef}
@@ -88,7 +93,7 @@ export default function InputField({setValues}){
             }
             <button 
                 type='button' 
-                id={formInfo.btnId}
+                onClick={handleDelete}
             >
             -
             </button>
