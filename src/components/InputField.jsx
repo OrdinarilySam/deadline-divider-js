@@ -60,11 +60,6 @@ export default function InputField({setValues, onDelete, parentId }){
         inputRef.current.blur()
     }
 
-    function handleDelete(){
-        onDelete(formInfo.parentId)
-    }
-
-
 
     return (
         <form 
@@ -93,7 +88,7 @@ export default function InputField({setValues, onDelete, parentId }){
             }
             <button 
                 type='button' 
-                onClick={handleDelete}
+                onClick={() => onDelete(formInfo.parentId)}
             >
             -
             </button>
