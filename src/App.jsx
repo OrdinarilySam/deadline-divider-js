@@ -12,7 +12,6 @@ function App() {
     <div>
       <h1>Placeholder</h1>
       <DateField
-        dates={dates}
         setDates={setDates}
       />
       <FieldBox 
