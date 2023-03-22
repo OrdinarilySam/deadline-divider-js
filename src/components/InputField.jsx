@@ -22,10 +22,10 @@ export default function InputField({setValues, onDelete, parentId }){
         setValues( prevValues =>{
             return {
                 ...prevValues,
-                [formInfo.inputId]: ""
+                [formInfo.childId]: formInfo.inputValue
             }
         })
-    }, [])
+    }, [formInfo])
 
 
 

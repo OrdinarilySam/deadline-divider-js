@@ -8,6 +8,12 @@ function App() {
   const [values, setValues] = useState([])
   const [dates, setDates] = useState([])
 
+
+  function handleClick() {
+    console.log(dates)
+    console.log(values)
+  }
+
   return (
     <div>
       <h1>Placeholder</h1>
@@ -17,6 +23,7 @@ function App() {
       <FieldBox 
         setValues={setValues}
       />
+      <button onClick={handleClick}>Calculate</button>
     </div>
     
   )
