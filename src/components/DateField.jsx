@@ -27,6 +27,7 @@ export default function DateField({ setDates }) {
 
   return (
     <div>
+      <h3>Input</h3>
       <input
         id="startDate"
         type="date"

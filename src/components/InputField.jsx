@@ -31,6 +31,7 @@ export default function InputField({setValues, onDelete, parentId }){
 
 
     function handleChange(event){
+        if(isNaN(event.target.value)) return;
         setFormInfo(prevFormInfo => {
             return {
                 ...prevFormInfo, 
