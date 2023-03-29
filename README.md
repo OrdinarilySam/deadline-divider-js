@@ -10,5 +10,6 @@ An example is, given a start date of today and an end date of one week from toda
 It was initially something I created in vanilla javascript, but then I broke it somehow and wanted to recreate it using a framework.
 
 ### Features I plan on adding
+- Styling (not really a feature)
 - Switch to toggle between fixed amount per day and fixed duration per segment
-- _More to be added soon_s
+- _More to be added soon_
