@@ -28,15 +28,19 @@ function App() {
           onClick={isSubmitted ? ()=>{} : handleSwitch}
         >Results</h3>
       </div>
-      <div className='allInputsBox' style={isSubmitted ? {display: "none"} : {display: "block"}}>
+      <div className='div-container-allinputs' style={isSubmitted ? {display: "none"} : {display: "block"}}>
         <DateField setDates={setDates} />
         <FieldBox setValues={setValues} />
       </div>
       {isSubmitted ? <Results values={values} dates={dates} /> : ""}
-      <button 
-        className='submitBtn'
-        onClick={handleSwitch}>{isSubmitted ? "Back" : "Calculate"}</button>
-      <button onClick={() => window.location.reload(false)}>Reset</button>
+      <div className="div-option-buttons-container">
+        <button 
+          className='button-submit'
+          onClick={handleSwitch}>{isSubmitted ? "Back" : "Calculate"}</button>
+        <button 
+          onClick={() => window.location.reload(false)}
+          className='button-reset'>Reset</button>
+      </div>
     </div>
     
   )
