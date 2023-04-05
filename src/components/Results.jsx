@@ -1,3 +1,5 @@
+import "../App.css"
+
 export default function Results({ values, dates }) {
   const totalDiff = dates[1].diff(dates[0], "days") || 1;
   let totalSum = 0;
@@ -36,13 +38,16 @@ export default function Results({ values, dates }) {
     let amtOfWeeks = 0;
     let newElement;
 
+
+    //refactor to include divs to hold the different information {amt/ amt per time / }
+    // flexbox or grid will make this easier to style
     if (amtOfDays > 30) {
       amtOfMonths = Math.floor(amtOfDays / 30);
       amtOfDays -= amtOfMonths * 30;
       newElement = (
-        <p key={index}>
-          {amtOfMonths} {amtOfMonths != 1 ? "months" : "month"} /{" "}
-          {amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}{" "}
+        <p className="p-lot">
+          <span className="span-accent">{amtOfMonths}</span> {amtOfMonths != 1 ? "months" : "month"} /{" "}
+          <span className="span-accent">{amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}</span>{" "}
           {amtOfDays != 1 ? "days" : "day"}
         </p>
       );
@@ -50,30 +55,37 @@ export default function Results({ values, dates }) {
       amtOfWeeks = Math.floor(amtOfDays / 7);
       amtOfDays -= amtOfWeeks * 7;
       newElement = (
-        <p key={index}>
-          {amtOfWeeks} {amtOfWeeks != 1 ? "weeks" : "week"} /{" "}
-          {amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}{" "}
+        <p className="p-lot">
+          <span className="span-accent">{amtOfWeeks}</span> {amtOfWeeks != 1 ? "weeks" : "week"} /{" "}
+          <span className="span-accent">{amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}</span>{" "}
           {amtOfDays != 1 ? "days" : "day"}
         </p>
       );
     } else {
       newElement = (
-        <p key={index}>
-          {amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}{" "}
+        <p className="p-lot">
+          <span className="span-accent">{amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}</span>{" "}
           {amtOfDays != 1 ? "days" : "day"}
         </p>
       );
     }
-    components.push(newElement);
+    components.push(
+      <div className="div-result-field" key={index}>
+        <p className="p-results-amount">{element}</p>
+        {newElement}
+      </div>
+    );
   });
 
   return (
-    <div>
-      <h2>Results</h2>
-      <p>
-        {fixedRate} | Length of Time: {totalDiff} days
-      </p>
-      {components}
+    <div className="div-container-results">
+      <div className="div-fixed-container">
+        <p className="p-fixed-rate">{fixedRate}</p>
+        <p className="p-total-lot">Length of Time: <span className="span-ccent">{totalDiff}</span> days</p>
+      </div>
+      <div className="div-result-els-container">
+        {components}
+      </div>
     </div>
   );
 }

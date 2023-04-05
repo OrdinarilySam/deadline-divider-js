@@ -8,6 +8,11 @@ export default function FieldBox({setValues}) {
 
     function handleDelete(key){
         setFields(prevFields => prevFields.filter((id) => id !== key))
+        setValues(prevValues => {
+            const newValues = {...prevValues}
+            delete newValues[key]
+            return newValues
+        })
     }
 
     function handleClick(){
@@ -18,7 +23,7 @@ export default function FieldBox({setValues}) {
     }
 
     return (
-        <div>
+        <div className='div-container-fieldbox'>
             {fields.map((id) => (
                 <InputField
                     key={id}
@@ -27,7 +32,7 @@ export default function FieldBox({setValues}) {
                     parentId={id}
                 />
             ))}
-            <button onClick={handleClick}>Add Another</button>
+            <button className='button-add' onClick={handleClick}>Add Another</button>
         </div>
     )
 }

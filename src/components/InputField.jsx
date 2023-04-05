@@ -22,7 +22,7 @@ export default function InputField({setValues, onDelete, parentId }){
         setValues( prevValues =>{
             return {
                 ...prevValues,
-                [formInfo.childId]: formInfo.inputValue
+                [formInfo.parentId]: formInfo.inputValue
             }
         })
     }, [formInfo])
@@ -36,12 +36,6 @@ export default function InputField({setValues, onDelete, parentId }){
             return {
                 ...prevFormInfo, 
                 inputValue: event.target.value
-            }
-        })
-        setValues(prevValues => {
-            return {
-                ...prevValues,
-                [formInfo.childId]: event.target.value
             }
         })
     }
@@ -64,6 +58,7 @@ export default function InputField({setValues, onDelete, parentId }){
 
     return (
         <form 
+            className='form-container-inputfield'
             key={formInfo.inputId} 
             onSubmit={handleSubmit}
         >
@@ -71,13 +66,14 @@ export default function InputField({setValues, onDelete, parentId }){
                 formInfo.set ? 
                 
                 <p
-                    style={{display: 'inline'}}
+                    className='p-input-label'
                     onClick={handleFocus}
                 >
                 {formInfo.inputValue}
                 </p>
                 :
                 <input 
+                    className='input-input-field'
                     type="text" 
                     value={formInfo.inputValue} 
                     onChange={handleChange}
@@ -88,6 +84,7 @@ export default function InputField({setValues, onDelete, parentId }){
 
             }
             <button 
+                className='button-remove'
                 type='button' 
                 onClick={() => onDelete(formInfo.parentId)}
             >

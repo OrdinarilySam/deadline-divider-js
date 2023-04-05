@@ -26,17 +26,21 @@ export default function DateField({ setDates }) {
   }
 
   return (
-    <div>
-      <h3>Input</h3>
+    <div className="div-container-datefield">
       <input
         id="startDate"
+        className="input-start-date"
         type="date"
         onChange={handleChange}
         value={startDate.format('YYYY-MM-DD')}
       />
-      <button onClick={handleClick}>Today</button>
+      <button 
+        onClick={handleClick}
+        className="button-today"
+      >Today</button>
       <input
         id="endDate"
+        className="input-end-date"
         type="date"
         onChange={handleChange}
         value={endDate.format("YYYY-MM-DD")}
