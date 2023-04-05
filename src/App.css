@@ -1,0 +1,125 @@
+
+/* TOP LEVEL ELEMENTS */
+*{
+  box-sizing: border-box;
+  text-align: center;
+}
+html {
+  height: 100%;
+}
+
+body {
+  margin: auto;
+  max-width: 600px;
+}
+
+button {
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+h1{
+  margin-bottom: 0;
+}
+
+form{
+  width: 50%;
+  padding: 0.1em 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* DIVS */
+.div-nav-header {
+  display: flex;
+  justify-content: center;
+}
+
+.div-fixed-container {
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+}
+
+.div-result-field {
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+}
+
+.div-container-datefield{
+  margin: 0.25em auto;
+  display: flex;
+  justify-content: center;
+}
+
+.div-option-buttons-container{
+  margin: 1em auto;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  width: 50%;
+}
+
+/* HEADER 3S */
+.h3-nav {
+  margin: 0 2em 0.75em 2em;
+  color: grey;
+}
+
+.h3-nav-selected {
+  color: black;
+}
+
+.h3-nav:hover{
+  cursor: pointer;
+}
+
+.h3-nav-selected:hover{
+  cursor: default;
+}
+
+
+/* INPUTS */
+.p-input-label, .input-input-field{
+  display: inline-block;
+  text-align: right;
+  width: 75%;
+  margin: 0.25em 0;
+}
+
+.p-input-label{
+  cursor: pointer;
+}
+
+
+/* BUTTONS */
+.button-add {
+  width: 50%;
+  margin: 10px;
+  padding: 0.1em 0;
+
+}
+
+.button-remove{
+  width: 25%;
+  height: 75%;
+  margin: auto;
+}
+
+.button-submit, .button-reset{
+  padding: 0.5em 0;
+}
+
+.button-submit{
+  width: 75%;
+  background-color: limegreen;
+}
+
+.button-reset{
+  width: 25%;
+  background-color: red;
+}
