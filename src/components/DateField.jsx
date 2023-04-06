@@ -38,7 +38,7 @@ export default function DateField({ setDates }) {
         <button 
           onClick={handleClick}
           className="button-today"
-        >Today</button>
+        >⟲</button>
       </div>
       <input
         id="endDate"
