@@ -16,15 +16,15 @@ export default function Results({ values, dates }) {
 
   let fixedRate;
   if (amtPerMonth)
-    fixedRate = `Amount per Month: ${
+    fixedRate = `Amount/Month: ${
       amtPerMonth % 1 != 0 ? amtPerMonth.toFixed(2) : amtPerMonth
     }`;
   else if (amtPerWeek)
-    fixedRate = `Amount per Week: ${
+    fixedRate = `Amount/Week: ${
       amtPerWeek % 1 != 0 ? amtPerWeek.toFixed(2) : amtPerWeek
     }`;
   else
-    fixedRate = `Amount per Day: ${
+    fixedRate = `Amount/Day: ${
       amtPerDay % 1 != 0 ? amtPerDay.toFixed(2) : amtPerDay
     }`;
 
@@ -81,7 +81,7 @@ export default function Results({ values, dates }) {
     <div className="div-container-results">
       <div className="div-fixed-container">
         <p className="p-fixed-rate">{fixedRate}</p>
-        <p className="p-total-lot">Length of Time: <span className="span-ccent">{totalDiff}</span> days</p>
+        <p className="p-total-lot">Duration: <span className="span-ccent">{totalDiff}</span> days</p>
       </div>
       <div className="div-result-els-container">
         {components}
