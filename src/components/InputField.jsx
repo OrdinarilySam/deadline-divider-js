@@ -7,10 +7,8 @@ export default function InputField({setValues, onDelete, parentId }){
     const inputRef = useRef(null)
 
     const [formInfo, setFormInfo] = useState(() => {
-        const childId = nanoid()
         return {
             parentId: parentId,
-            childId: childId,
             set: false,
             inputValue: ""
         }
