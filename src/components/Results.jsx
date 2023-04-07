@@ -1,4 +1,4 @@
-import "../App.css"
+import "../App.css";
 
 export default function Results({ values, dates }) {
   const totalDiff = dates[1].diff(dates[0], "days") || 1;
@@ -30,24 +30,22 @@ export default function Results({ values, dates }) {
 
   const components = [];
 
-  // Come back here later to determine actual months needed
-  // With moment
   valArr.forEach((element, index) => {
     let amtOfDays = element / amtPerDay;
     let amtOfMonths = 0;
     let amtOfWeeks = 0;
     let newElement;
 
-
-    //refactor to include divs to hold the different information {amt/ amt per time / }
-    // flexbox or grid will make this easier to style
     if (amtOfDays > 30) {
       amtOfMonths = Math.floor(amtOfDays / 30);
       amtOfDays -= amtOfMonths * 30;
       newElement = (
         <p className="p-lot">
-          <span className="span-accent">{amtOfMonths}</span> {amtOfMonths != 1 ? "months" : "month"} /{" "}
-          <span className="span-accent">{amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}</span>{" "}
+          <span className="span-accent">{amtOfMonths}</span>{" "}
+          {amtOfMonths != 1 ? "months" : "month"} /{" "}
+          <span className="span-accent">
+            {amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}
+          </span>{" "}
           {amtOfDays != 1 ? "days" : "day"}
         </p>
       );
@@ -56,15 +54,20 @@ export default function Results({ values, dates }) {
       amtOfDays -= amtOfWeeks * 7;
       newElement = (
         <p className="p-lot">
-          <span className="span-accent">{amtOfWeeks}</span> {amtOfWeeks != 1 ? "weeks" : "week"} /{" "}
-          <span className="span-accent">{amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}</span>{" "}
+          <span className="span-accent">{amtOfWeeks}</span>{" "}
+          {amtOfWeeks != 1 ? "weeks" : "week"} /{" "}
+          <span className="span-accent">
+            {amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}
+          </span>{" "}
           {amtOfDays != 1 ? "days" : "day"}
         </p>
       );
     } else {
       newElement = (
         <p className="p-lot">
-          <span className="span-accent">{amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}</span>{" "}
+          <span className="span-accent">
+            {amtOfDays % 1 != 0 ? amtOfDays.toFixed(2) : amtOfDays}
+          </span>{" "}
           {amtOfDays != 1 ? "days" : "day"}
         </p>
       );
@@ -81,11 +84,11 @@ export default function Results({ values, dates }) {
     <div className="div-container-results">
       <div className="div-fixed-container">
         <p className="p-fixed-rate">{fixedRate}</p>
-        <p className="p-total-lot">Duration: <span className="span-ccent">{totalDiff}</span> days</p>
+        <p className="p-total-lot">
+          Duration: <span className="span-ccent">{totalDiff}</span> days
+        </p>
       </div>
-      <div className="div-result-els-container">
-        {components}
-      </div>
+      <div className="div-result-els-container">{components}</div>
     </div>
   );
 }
