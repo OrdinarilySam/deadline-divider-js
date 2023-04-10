@@ -44,9 +44,11 @@ form{
   width: 65%;
   margin: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 4em;
   border-bottom: 1px solid black;
+  gap: 1em;
+  padding-bottom: 1em;
 }
 
 .div-result-field {
@@ -73,6 +75,15 @@ form{
 .div-container-first-date {
   display: flex;
   flex-direction: row;
+}
+
+.div-totals-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4em;
+  margin: 0;
+  padding: 0;
 }
 
 /* HEADER 3S */
@@ -110,6 +121,17 @@ form{
   background-color: #fafafa;
 }
 
+.p-fixed-rate{
+  margin: auto;
+}
+
+.p-total-lot{
+  margin: 0;
+}
+
+.p-total-amount{
+  margin: 0;
+}
 
 
 /* BUTTONS */

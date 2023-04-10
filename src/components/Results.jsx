@@ -83,10 +83,13 @@ export default function Results({ values, dates }) {
   return (
     <div className="div-container-results">
       <div className="div-fixed-container">
+        <div className="div-totals-container">
+          <p className="p-total-amount">Amount: {totalSum}</p>
+          <p className="p-total-lot">
+            Duration: <span className="span-accent">{totalDiff}</span> days
+          </p>
+        </div>
         <p className="p-fixed-rate">{fixedRate}</p>
-        <p className="p-total-lot">
-          Duration: <span className="span-ccent">{totalDiff}</span> days
-        </p>
       </div>
       <div className="div-result-els-container">{components}</div>
     </div>
