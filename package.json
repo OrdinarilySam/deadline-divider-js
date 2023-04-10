@@ -1,6 +1,6 @@
 {
   "name": "deadline-divider-js",
-  "homepage": "https://ordinarilysam.github.io/deadline-divider-js",
+  "homepage": "https://ordinarilysam.github.io/deadline-divider-js/",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "moment": "^2.29.4",
