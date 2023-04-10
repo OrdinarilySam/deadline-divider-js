@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div>
-      <h1 className='h1-title'>Placeholder</h1>
+      <h1 className='h1-title'>Deadline Divider</h1>
       <div className="div-nav-header">
         <h3 
           className={isSubmitted ? "h3-nav" : "h3-nav h3-nav-selected"}
