@@ -73,6 +73,7 @@ export default function InputField({setValues, onDelete, parentId }){
                 </p>
                 :
                 <input 
+                    inputMode='numeric'
                     className='input-input-field'
                     type="text" 
                     value={formInfo.inputValue} 
