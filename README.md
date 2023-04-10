@@ -13,6 +13,8 @@
 
 4. You can click reset to start with a blank slate
    - or click back or inputs to go back to your inputs
+
+You can play around with it yourself [here](https://ordinarilysam.github.io/deadline-divider-js/)
    
 > Inputs tab
 > ![Screenshot 2023-04-10 at 11 06 15 AM](https://user-images.githubusercontent.com/56322367/230942311-9f7a9a7b-b1c9-4c24-831a-ec572d2d2c0e.jpg)
