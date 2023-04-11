@@ -1,4 +1,5 @@
 # Deadline Divider
+> Note: Please ignore the styling, I just threw it together mostly for the layout to have a usable site, it will be fixed soon.
 ## Guide
 1. First select a start and end date
    - the button next to the start date will set it to today
